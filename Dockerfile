@@ -1,6 +1,7 @@
 FROM node:current-alpine AS base
 WORKDIR /base
 COPY package*.json ./
+ENV NODE_OPTIONS=--openssl-legacy-provider
 RUN npm ci
 COPY . .
 
