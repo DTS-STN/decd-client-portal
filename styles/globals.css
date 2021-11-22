@@ -3,11 +3,27 @@
 @tailwind components;
 @tailwind utilities;
 
+
 @layer base {
-  /* consistent focus styles on all components */
+  /* Font families */
+  li {
+    @apply font-body;
+  }
   * {
     @apply focus:outline-none;
     @apply focus-visible:ring-1;
     @apply focus-visible:ring-black;
+  }
 }
+
+@layer utilities {
+  .layout-container {
+    @apply px-4;
+  }
+
+  @screen md {
+    .layout-container {
+      @apply container mx-auto px-6;
+    }
+  }
 }
