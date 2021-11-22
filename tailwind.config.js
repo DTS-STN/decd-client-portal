@@ -71,6 +71,10 @@ module.exports = {
           solid: '#DC2875',
           dark: '#9E4068',
         },
+        'cpButton': {
+          org: '#26374a',
+          hover: '#1d2a38',
+        },
       },
       backgroundImage: () => ({
         'footer-parliament-image': 'url(../public/landscape.png)',
