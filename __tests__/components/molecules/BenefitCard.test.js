@@ -3,7 +3,7 @@ import BenefitCard from '../../../components/molecules/BenefitCard'
 import Button from '../../../components/molecules/Button'
 import Enzyme, { shallow } from 'enzyme'
 import chai from 'chai'
-import Adapter from 'enzyme-adapter-react-16'
+import Adapter from '@wojtekmaj/enzyme-adapter-react-17'
 
 Enzyme.configure({ adapter: new Adapter() })
 const expect = chai.expect
