@@ -66,7 +66,28 @@ export default function Layout() {
       <BenefitCard benefit={canadaPensionPlan} />
       <BenefitCard benefit={oldAgeSecurity} />
       <BenefitCard benefit={employmentInsurance} />
-      <Footer />
+      <Footer
+        footerLogoAltText="symbol2"
+        footerNav="aboutThisSite"
+        links={[
+          {
+            link: '/dashboard',
+            linkText: 'About Service Canada',
+          },
+          {
+            link: '/dashboard',
+            linkText: 'About Canada.ca',
+          },
+          {
+            link: '/dashboard',
+            linkText: 'Privacy',
+          },
+          {
+            link: '/dashboard',
+            linkText: 'Terms & Conditions',
+          },
+        ]}
+      />
     </div>
   )
 }
