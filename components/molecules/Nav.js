@@ -6,14 +6,17 @@ export default function Nav() {
     <div className="bg-deep-blue-solid text-white py-2.5">
       <div className="layout-container flex justify-between items-center">
         <h1 className="font-display text-white text-xl">Service Canada</h1>
-        <div className="flex items-center font-body text-sm">
+        <div className="hidden font-body text-sm md:flex md:items-center">
           <Dropdown text="Services" />
           <Dropdown text="Life Journey" />
           <Dropdown text="Contact Us" />
         </div>
         <Link key="" href="/">
-          <a className="font-body text-sm">Logout</a>
+          <a className="hidden font-body text-sm md:block">Logout</a>
         </Link>
+        <div className="md:hidden">
+          <Dropdown text="Menu" />
+        </div>
       </div>
     </div>
   )

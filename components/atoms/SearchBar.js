@@ -1,6 +1,6 @@
 export default function SearchBar() {
   return (
-    <form className="flex mr-4">
+    <form className="flex mt-5 md:mt-0 md:mr-4">
       <input
         placeholder="Search on Service Canada"
         type="text"

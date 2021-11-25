@@ -3,7 +3,7 @@ import propTypes from 'prop-types'
 
 export default function Dropdown({ text }) {
   return (
-    <div className="flex mx-7">
+    <div className="flex items-center md:mx-7">
       <Link key="" href="/dashboard">
         <a>{text}</a>
       </Link>
