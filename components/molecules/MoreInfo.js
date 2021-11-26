@@ -34,7 +34,7 @@ export default function MoreInfo() {
           <br />
           <br />
         </p>
-        <a className="underline font-display text-sm" href="/dashboard">
+        <a className="underline font-display text-sm" href="">
           Learn more
         </a>
       </div>
