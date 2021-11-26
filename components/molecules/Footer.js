@@ -5,7 +5,7 @@ import SocialMedia from './SocialMedia'
 export default function Footer(props) {
   return (
     <footer>
-      <div className="layout-container mb-16">
+      <div className="layout-container py-12 lg:py-16">
         <DateModified />
         <div className="w-full lg:flex lg:justify-between lg:items-center">
           <div className="flex-col">
@@ -40,7 +40,7 @@ export default function Footer(props) {
             </div>
           </div>
           <img
-            className="my-5 h-6 w-auto lg:my-0"
+            className="my-5 h-6 w-auto lg:my-0 lg:h-7"
             src={'/wmms-blk.svg'}
             alt={props.footerLogoAltText}
           />
