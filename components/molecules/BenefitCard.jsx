@@ -58,7 +58,7 @@ const BenefitCard = (props) => {
   }
 
   return (
-    <div className="p-10">
+    <div className="layout-container py-4">
       <div className="w-12/12 mx-auto rounded overflow-hidden shadow-lg">
         {/* Benefit Card */}
         <div className="px-6 py-4">
