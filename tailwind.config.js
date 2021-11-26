@@ -17,11 +17,13 @@ module.exports = {
     extend: {
       colors: {
         'gray': {
+          lightest: '#F4F4F4',
           light: '#DBDBDB',
           solid: '#B9B9B9',
           dark: '#7F8C8D',
         },
         'dark': {
+          light: '#333333',
           solid: '#262626',
         },
         'light': {
@@ -31,6 +33,7 @@ module.exports = {
           light: '#78B9E4',
           solid: '#3498DB',
           dark: '#245C81',
+          royal: '#2b4380',
         },
         'deep-blue': {
           light: '#5E8EBD',
@@ -79,6 +82,9 @@ module.exports = {
       },
       boxShadow: {
         card: '0px 2px 8px rgba(0, 0, 0, 0.25)',
+      },
+      height: {
+        tiny: '1.5px',
       },
     },
   },

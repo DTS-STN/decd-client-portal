@@ -1,6 +1,6 @@
 export default function SocialMedia() {
   return (
-    <div className="py-5 border-b-2 lg:py-0 lg:border-none">
+    <div className="py-5 border-b-2 lg:py-0 lg:pb-2 lg:border-none">
       <h3 className="font-poppins font-semibold text-xs text-deep-blue-solid">
         Follow Us
       </h3>
