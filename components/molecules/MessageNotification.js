@@ -5,7 +5,7 @@ const MessageNotification = () => {
     <div className="layout-container">
       <div>
         <p>
-          <img src="/notification.svg" class="inline" /> 1 messages.{' '}
+          <img src="/notification.svg" className="inline" /> 1 messages.{' '}
           <a href="#">
             <u>Go to Notifications and Message Centre</u>
           </a>
