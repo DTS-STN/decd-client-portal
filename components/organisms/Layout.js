@@ -2,6 +2,7 @@ import Header from '../molecules/Header'
 import Footer from '../molecules/Footer'
 import BenefitCard from '../molecules/BenefitCard'
 import MoreInfo from '../molecules/MoreInfo'
+import MessageNotification from '../molecules/MessageNotification'
 
 export default function Layout() {
   const canadaPensionPlan = {
@@ -64,6 +65,7 @@ export default function Layout() {
   return (
     <div>
       <Header />
+      <MessageNotification />
       <BenefitCard benefit={canadaPensionPlan} />
       <BenefitCard benefit={oldAgeSecurity} />
       <BenefitCard benefit={employmentInsurance} />
