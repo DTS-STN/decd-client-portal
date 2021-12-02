@@ -47,7 +47,7 @@ module.exports = {
         },
         'red': {
           light: '#B76565',
-          solid: '#FF0000',
+          solid: '#D94141',
           dark: '#881515',
         },
         'burgundy': {
