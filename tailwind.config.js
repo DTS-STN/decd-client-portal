@@ -9,6 +9,10 @@ module.exports = {
       body: ['Noto Sans', 'sans-serif'],
       poppins: ['Poppins', 'sans-serif'],
     },
+    fontSize: {
+      xxs: '.5rem',
+      ...defaultTheme.fontSize,
+    },
     screens: {
       'xs': '376px',
       ...defaultTheme.screens,
@@ -18,8 +22,9 @@ module.exports = {
       colors: {
         'gray': {
           lightest: '#F4F4F4',
-          light: '#DBDBDB',
+          light: '#F9F9F9',
           solid: '#B9B9B9',
+          notif: '#595959',
           dark: '#7F8C8D',
         },
         'dark': {
@@ -42,7 +47,7 @@ module.exports = {
         },
         'red': {
           light: '#B76565',
-          solid: '#D94141',
+          solid: '#FF0000',
           dark: '#881515',
         },
         'burgundy': {

@@ -1,6 +1,6 @@
 import React from 'react'
 import BenefitCard from '../../../components/molecules/BenefitCard'
-import Button from '../../../components/molecules/Button'
+import Button from '../../../components/atoms/Button'
 import Enzyme, { shallow } from 'enzyme'
 import chai from 'chai'
 import Adapter from '@wojtekmaj/enzyme-adapter-react-17'
