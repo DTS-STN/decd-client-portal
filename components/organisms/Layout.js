@@ -1,7 +1,9 @@
 import Header from '../molecules/Header'
 import Footer from '../molecules/Footer'
+import Card from '../atoms/Card'
 import BenefitCard from '../molecules/BenefitCard'
 import MoreInfo from '../molecules/MoreInfo'
+import MessageCenter from '../molecules/MessageCenter'
 import MessageNotification from '../molecules/MessageNotification'
 
 export default function Layout() {
@@ -69,6 +71,25 @@ export default function Layout() {
       <BenefitCard benefit={canadaPensionPlan} />
       <BenefitCard benefit={oldAgeSecurity} />
       <BenefitCard benefit={employmentInsurance} />
+      <MessageCenter
+        messages={[
+          {
+            messageSubject: 'Upcoming change in OAS',
+            date: 'October 4, 2021',
+            attachment: true,
+          },
+          {
+            messageSubject: 'An update regarding GIS',
+            date: 'September 28, 2021',
+            attachment: true,
+          },
+          {
+            messageSubject: 'Your EI eligibility period ends',
+            date: 'July 16, 2021',
+            attachment: false,
+          },
+        ]}
+      />
       <MoreInfo />
       <Footer
         footerLogoAltText="symbol2"
