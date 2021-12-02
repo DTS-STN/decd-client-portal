@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import Button from './Button'
+import Button from '../atoms/Button'
 import PropTypes from 'prop-types'
 import EiBenefitCard from './EiBenefitCard'
 import CppBenefitCard from './CppBenefitCard'
@@ -73,10 +73,7 @@ const BenefitCard = (props) => {
         </div>
         {/* Benefit Card Details */}
         <div>{isOpen && renderBenefit()}</div>
-
-        <div className="px-6 py-4">
-          <Button onClick={handleClick}>{btnCaption}</Button>
-        </div>
+        <Button onClick={handleClick}>{btnCaption}</Button>
       </div>
     </div>
   )
