@@ -1,13 +1,11 @@
-import React, { useState } from 'react'
-
+import styles from '../../styles/Home.module.css'
 const MessageNotification = () => {
   return (
     <div className="layout-container">
       <div className="py-4">
         <p className="text-2xl">
           <img src="/notification.svg" className="inline" />
-          <span className="notification-blue-text text-2xl"> 1</span> New
-          Message{' '}
+          <span className={styles.notificationText}> 1</span> New Message{' '}
           <a href="#">
             <u>Go to Notifications and Message Centre</u>
           </a>
