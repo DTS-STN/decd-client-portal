@@ -4,6 +4,9 @@ import Card from '../atoms/Card'
 import BenefitCard from '../molecules/BenefitCard'
 import MoreInfo from '../molecules/MoreInfo'
 import MessageCenter from '../molecules/MessageCenter'
+import MessageNotification from '../molecules/MessageNotification'
+import SectionHeading from '../atoms/SectionHeading'
+import Greeting from '../molecules/Greeting'
 
 export default function Layout() {
   const canadaPensionPlan = {
@@ -66,8 +69,28 @@ export default function Layout() {
   return (
     <div>
       <Header />
+      <section className="py-4"></section>
+      <Greeting name={'Jane'} />
+      <MessageNotification />
+      <section className="py-4">
+        <div className="layout-container font-bold text-3xl">
+          Your Benefits and Services
+        </div>
+      </section>
+      <SectionHeading
+        icon="/status-icon-active.svg"
+        title="Active Benefits and Services"
+      />
       <BenefitCard benefit={canadaPensionPlan} />
+      <SectionHeading
+        icon="/status-icon-pending.svg"
+        title="Pending Benefits and Services"
+      />
       <BenefitCard benefit={oldAgeSecurity} />
+      <SectionHeading
+        icon="/status-icon-past.svg"
+        title="Past Benefits and Services"
+      />
       <BenefitCard benefit={employmentInsurance} />
       <MessageCenter
         messages={[
