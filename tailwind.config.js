@@ -84,6 +84,9 @@ module.exports = {
           org: '#26374a',
           hover: '#1d2a38',
         },
+        'notificationText': {
+          solid: '#0070f3',
+        },
       },
       boxShadow: {
         card: '0px 2px 8px rgba(0, 0, 0, 0.25)',
