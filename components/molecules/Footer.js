@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types'
 import DateModified from '../atoms/DateModified'
 import SocialMedia from './SocialMedia'
+import ScrollToTop from '../atoms/ScrollToTop'
 
 export default function Footer(props) {
   return (
@@ -45,6 +46,9 @@ export default function Footer(props) {
             alt={props.footerLogoAltText}
           />
         </div>
+      </div>
+      <div className="md:hidden">
+        <ScrollToTop />
       </div>
     </footer>
   )
