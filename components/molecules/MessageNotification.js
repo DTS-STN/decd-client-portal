@@ -1,4 +1,3 @@
-import styles from '../../styles/Home.module.css'
 const MessageNotification = () => {
   return (
     <div className="layout-container">
