@@ -2,19 +2,21 @@ import PropTypes from 'prop-types'
 import SectionHeading from '../atoms/SectionHeading'
 import Card from '../atoms/Card'
 import Button from '../atoms/Button'
+import useTranslation from 'next-translate/useTranslation'
 
-export default function MessageCenter(props) {
+export default function MessageCenter({ messages }) {
+  const { t } = useTranslation('common')
   return (
     <div>
-      <SectionHeading icon="/mail.svg" title="Message Center" />
+      <SectionHeading icon="/mail.svg" title={t('title_message_center')} />
       <Card
         content={
           <div>
             <h3 className="font-display font-bold text-lg m-4 sm:ml-6">
-              Recent Messages
+              {t('title_recent_messages')}
             </h3>
             <ul>
-              {props.messages.map((value, index) => {
+              {messages.map((value, index) => {
                 return (
                   <li
                     key={index}
@@ -50,7 +52,7 @@ export default function MessageCenter(props) {
                 )
               })}
             </ul>
-            <Button>View More</Button>
+            <Button>{t('button_view_more')}</Button>
           </div>
         }
       />

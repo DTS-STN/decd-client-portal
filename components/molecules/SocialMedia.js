@@ -1,8 +1,11 @@
+import useTranslation from 'next-translate/useTranslation'
+
 export default function SocialMedia() {
+  const { t } = useTranslation('common')
   return (
     <div className="py-5 border-b-2 lg:py-0 lg:pb-2 lg:border-none">
       <h3 className="font-poppins font-semibold text-xs text-deep-blue-solid">
-        Follow Us
+        {t('title_follow')}
       </h3>
       <div className="mt-2 flex flex-row items-center">
         <div className="mr-7">

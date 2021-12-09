@@ -1,14 +1,15 @@
 import Header from '../molecules/Header'
 import Footer from '../molecules/Footer'
-import Card from '../atoms/Card'
 import BenefitCard from '../molecules/BenefitCard'
 import MoreInfo from '../molecules/MoreInfo'
 import MessageCenter from '../molecules/MessageCenter'
 import MessageNotification from '../molecules/MessageNotification'
 import SectionHeading from '../atoms/SectionHeading'
 import Greeting from '../molecules/Greeting'
+import useTranslation from 'next-translate/useTranslation'
 
 export default function Layout() {
+  const { t } = useTranslation('common')
   const canadaPensionPlan = {
     benefitType: 'CPP',
     benefitName: 'Canada Pension Plan',
@@ -74,22 +75,22 @@ export default function Layout() {
       <MessageNotification />
       <section className="py-4">
         <div className="layout-container font-bold text-3xl">
-          Your Benefits and Services
+          {t('title_your_benefits')}
         </div>
       </section>
       <SectionHeading
         icon="/status-icon-active.svg"
-        title="Active Benefits and Services"
+        title={t('title_active_benefits')}
       />
       <BenefitCard benefit={canadaPensionPlan} />
       <SectionHeading
         icon="/status-icon-pending.svg"
-        title="Pending Benefits and Services"
+        title={t('title_pending_benefits')}
       />
       <BenefitCard benefit={oldAgeSecurity} />
       <SectionHeading
         icon="/status-icon-past.svg"
-        title="Past Benefits and Services"
+        title={t('title_past_benefits')}
       />
       <BenefitCard benefit={employmentInsurance} />
       <MessageCenter
@@ -113,24 +114,23 @@ export default function Layout() {
       />
       <MoreInfo />
       <Footer
-        footerLogoAltText="symbol2"
         footerNav="aboutThisSite"
         links={[
           {
             link: '/dashboard',
-            linkText: 'About Service Canada',
+            linkText: t('common:footer_link_about_service_can'),
           },
           {
             link: '/dashboard',
-            linkText: 'About Canada.ca',
+            linkText: t('common:footer_link_about_can'),
           },
           {
             link: '/dashboard',
-            linkText: 'Privacy',
+            linkText: t('common:footer_link_privacy'),
           },
           {
             link: '/dashboard',
-            linkText: 'Terms & Conditions',
+            linkText: t('common:title_your_benefits'),
           },
         ]}
       />

@@ -1,5 +1,3 @@
-import Image from 'next/image'
-
 export default function SectionHeading(props) {
   return (
     <div className="layout-container">

@@ -1,8 +1,11 @@
-const Greeting = (props) => {
+import useTranslation from 'next-translate/useTranslation'
+
+const Greeting = ({ name }) => {
+  const { t } = useTranslation('common')
   return (
     <section>
       <div className="layout-container font-bold text-4xl">
-        Good Morning, {props.name}. Welcome to your My Service Account
+        {t('greeting_message', { name: name })}
       </div>
     </section>
   )

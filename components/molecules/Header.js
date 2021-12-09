@@ -1,10 +1,10 @@
-import Link from 'next/link'
-import propTypes from 'prop-types'
+import LanguageToggle from '../atoms/LanguageToggle'
 import SearchBar from '../atoms/SearchBar'
 import Nav from './Nav'
+import { useRouter } from 'next/router'
 
 export default function Header() {
-  const language = 'en'
+  const router = useRouter()
   return (
     <header>
       <div className="layout-container flex justify-between py-5 items-center">
@@ -13,33 +13,15 @@ export default function Header() {
             <a href="https://www.canada.ca/en.html">
               <img
                 className="h-6 sm:h-8 lg:h-7 xl:h-8"
-                src={'/sig-blk-en.svg'}
-                alt={'Government of Canada'}
+                src={
+                  router.locale === 'en' ? '/sig-blk-en.svg' : '/sig-blk-fr.svg'
+                }
               />
             </a>
-            <div className="ml-7 md:hidden">
-              <Link href="/">
-                <a className="font-bold">FR</a>
-              </Link>
-            </div>
           </div>
           <SearchBar />
         </div>
-        <div className="hidden md:inline">
-          <Link
-            key={language}
-            href="/"
-            locale={language === 'en' ? 'fr' : 'en'}
-          >
-            <a
-              className="font-medium"
-              data-cy="toggle-language-link"
-              lang={language === 'en' ? 'fr' : 'en'}
-            >
-              {language === 'en' ? 'Français' : 'English'}
-            </a>
-          </Link>
-        </div>
+        <LanguageToggle />
       </div>
       <Nav />
     </header>

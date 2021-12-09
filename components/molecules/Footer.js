@@ -3,7 +3,7 @@ import DateModified from '../atoms/DateModified'
 import SocialMedia from './SocialMedia'
 import ScrollToTop from '../atoms/ScrollToTop'
 
-export default function Footer(props) {
+export default function Footer({ links }) {
   return (
     <footer>
       <div className="layout-container py-12 lg:py-16">
@@ -17,7 +17,7 @@ export default function Footer(props) {
               aria-labelledby="footerNav"
             >
               <ul className="flex flex-col lg:flex-row">
-                {props.links.map((value, index) => {
+                {links.map((value, index) => {
                   return (
                     <li
                       key={index}
@@ -43,7 +43,6 @@ export default function Footer(props) {
           <img
             className="my-5 h-6 w-auto lg:my-0 lg:h-7"
             src={'/wmms-blk.svg'}
-            alt={props.footerLogoAltText}
           />
         </div>
       </div>
@@ -55,18 +54,10 @@ export default function Footer(props) {
 }
 
 Footer.propTypes = {
-  /**
-   * array of objects containing the link text and link
-   */
   links: PropTypes.arrayOf(
     PropTypes.shape({
       link: PropTypes.string.isRequired,
       linkText: PropTypes.string.isRequired,
     })
   ),
-
-  /**
-   * alt text for footer canada-ca logo
-   */
-  footerLogoAltText: PropTypes.string.isRequired,
 }
