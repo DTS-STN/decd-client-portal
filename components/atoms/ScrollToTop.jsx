@@ -2,7 +2,7 @@ import { AiFillCaretUp } from 'react-icons/ai'
 import useTranslation from 'next-translate/useTranslation'
 
 const ScrollToTop = () => {
-  const { t } = useTranslation('common')
+  const { t } = useTranslation('dashboard')
 
   const ScrollToTop = () => {
     window.scrollTo({

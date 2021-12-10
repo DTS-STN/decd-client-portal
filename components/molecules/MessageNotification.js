@@ -1,7 +1,7 @@
 import useTranslation from 'next-translate/useTranslation'
 
 const MessageNotification = () => {
-  const { t } = useTranslation('common')
+  const { t } = useTranslation('dashboard')
   return (
     <div className="layout-container">
       <div className="py-4">

@@ -7,14 +7,14 @@ export default function LanguageToggle() {
   return (
     <div>
       <div className="hidden md:inline">
-        <Link href={'/dashboard'} locale={router.locale === 'en' ? 'fr' : 'en'}>
+        <Link href={route.asPath} locale={router.locale === 'en' ? 'fr' : 'en'}>
           <a className="font-medium">
             {router.locale === 'en' ? 'Français' : 'English'}
           </a>
         </Link>
       </div>
       <div className="ml-7 md:hidden">
-        <Link href={'/dashboard'} locale={router.locale === 'en' ? 'fr' : 'en'}>
+        <Link href={route.asPath} locale={router.locale === 'en' ? 'fr' : 'en'}>
           <a className="font-bold">{router.locale === 'en' ? 'FR' : 'EN'}</a>
         </Link>
       </div>

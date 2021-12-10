@@ -1,7 +1,7 @@
 import useTranslation from 'next-translate/useTranslation'
 
 const Greeting = ({ name }) => {
-  const { t } = useTranslation('common')
+  const { t } = useTranslation('dashboard')
   return (
     <section>
       <div className="layout-container font-bold text-4xl">

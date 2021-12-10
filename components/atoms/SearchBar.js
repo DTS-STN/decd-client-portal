@@ -1,7 +1,7 @@
 import useTranslation from 'next-translate/useTranslation'
 
 export default function SearchBar() {
-  const { t } = useTranslation('common')
+  const { t } = useTranslation('dashboard')
   return (
     <form className="flex mt-5 md:mt-0 md:mr-4">
       <input

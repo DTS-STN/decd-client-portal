@@ -5,7 +5,7 @@ import Button from '../atoms/Button'
 import useTranslation from 'next-translate/useTranslation'
 
 export default function MessageCenter({ messages }) {
-  const { t } = useTranslation('common')
+  const { t } = useTranslation('dashboard')
   return (
     <div>
       <SectionHeading icon="/mail.svg" title={t('title_message_center')} />
