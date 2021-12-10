@@ -1,7 +1,7 @@
 import useTranslation from 'next-translate/useTranslation'
 
 export default function SocialMedia() {
-  const { t } = useTranslation('common')
+  const { t } = useTranslation('dashboard')
   return (
     <div className="py-5 border-b-2 lg:py-0 lg:pb-2 lg:border-none">
       <h3 className="font-poppins font-semibold text-xs text-deep-blue-solid">

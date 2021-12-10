@@ -9,7 +9,7 @@ import Greeting from '../molecules/Greeting'
 import useTranslation from 'next-translate/useTranslation'
 
 export default function Layout() {
-  const { t } = useTranslation('common')
+  const { t } = useTranslation('dashboard')
   const canadaPensionPlan = {
     benefitType: 'CPP',
     benefitName: 'Canada Pension Plan',
@@ -118,19 +118,19 @@ export default function Layout() {
         links={[
           {
             link: '/dashboard',
-            linkText: t('common:footer_link_about_service_can'),
+            linkText: t('footer_link_about_service_can'),
           },
           {
             link: '/dashboard',
-            linkText: t('common:footer_link_about_can'),
+            linkText: t('footer_link_about_can'),
           },
           {
             link: '/dashboard',
-            linkText: t('common:footer_link_privacy'),
+            linkText: t('footer_link_privacy'),
           },
           {
             link: '/dashboard',
-            linkText: t('common:title_your_benefits'),
+            linkText: t('title_your_benefits'),
           },
         ]}
       />

@@ -1,7 +1,7 @@
 import useTranslation from 'next-translate/useTranslation'
 
 export default function MoreInfo() {
-  const { t } = useTranslation('common')
+  const { t } = useTranslation('dashboard')
   return (
     <div className="w-full py-16 bg-gray-lightest">
       <div className="layout-container">
