@@ -4,6 +4,7 @@ import PropTypes from 'prop-types'
 import EiBenefitCard from './EiBenefitCard'
 import CppBenefitCard from './CppBenefitCard'
 import OasBenefitCard from './OasBenefitCard'
+import GisBenefitCard from './GisBenefitCard'
 
 const BenefitCard = (props) => {
   const [isOpen, setIsOpen] = useState(false)
@@ -21,6 +22,9 @@ const BenefitCard = (props) => {
         return <OasBenefitCard oldAgeSecurity={props.benefit} />
       case 'EI':
         return <EiBenefitCard employmentInsurance={props.benefit} />
+      case 'GIS':
+      // We don't need to display details of GIS for simulation.
+      // return <GisBenefitCard guaranteedIncomeSupplement={props.benefit} />
       default:
         return null
     }
@@ -46,12 +50,7 @@ const BenefitCard = (props) => {
           </div>
         )
       case 'Pending':
-        return (
-          <div id="paymentStartDate" className="mt-6 ml-2">
-            <p>Application Status</p>
-            <p className="font-bold text-base">{props.benefit.status}</p>
-          </div>
-        )
+      case 'Past':
       default:
         return null
     }
