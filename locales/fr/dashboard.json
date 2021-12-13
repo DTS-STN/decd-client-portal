@@ -29,5 +29,13 @@
   "footer_link_about_can": "(FR)About Canada.ca",
   "footer_link_privacy": "(FR)Privacy",
   "footer_link_terms": "(FR)Terms & Conditions",
-  "button_scroll_top": "(FR)Top of page"
+  "button_scroll_top": "(FR)Top of page",
+
+  "application_date": "(FR)Application Date",
+  "application_type": "(FR)Application Type",
+  "application_description": "(FR)Application Description",
+  "withdrawal_request": "(FR)Withdrawal Request",
+  "withdrawal_status": "(FR)Withdrawal Status",
+  "withdrawal_request_description": "(FR)Withdrawal Request Description",
+  "application_withdrawn": "(FR)Application Withdrawn"
 }
