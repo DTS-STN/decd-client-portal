@@ -47,10 +47,27 @@ export default function Layout() {
       'Your OAS payments will start as soon as you are approved. You may also qualify for the Guaranteed Income Supplement. We will notify you if we require additional information from you',
   }
 
+  const guaranteedIncomeSupplement = {
+    benefitType: 'GIS',
+    benefitName: 'Guaranteed Income Supplement',
+    status: 'Pending',
+    statusDesciption:
+      'You application is pending, we will notify you with decision',
+    applicationDate: 'August 1, 2021',
+    applicationType: 'Guaranteed Income Supplement (GIS)',
+    applicationDescription: 'Paper Application Rceived',
+    withdrawalRequest: 'Pending',
+    withdrawalStatus: 'Not Approved',
+    withdrawalRequestDescription: 'In Progress',
+    applicationWithdrawn: 'No',
+    additionalInformation:
+      'Your GIS payments will start as soon as you are approved. You may also qualify for the Old Age Security program. We will notify you if we require additional information from you',
+  }
+
   const employmentInsurance = {
     benefitType: 'EI',
     benefitName: 'Employment Insurance',
-    status: 'Active',
+    status: 'Past',
     statusDesciption: 'You are currently enrolled in the Employment Insurance',
     nextPaymentAmount: 578.56,
     nextPaymentDate: 'October 30, 2021',
@@ -88,6 +105,7 @@ export default function Layout() {
         title={t('title_pending_benefits')}
       />
       <BenefitCard benefit={oldAgeSecurity} />
+      <BenefitCard benefit={guaranteedIncomeSupplement} />
       <SectionHeading
         icon="/status-icon-past.svg"
         title={t('title_past_benefits')}
