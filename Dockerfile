@@ -18,6 +18,10 @@ COPY --from=build /build/next.config.js ./
 COPY --from=build /build/package*.json ./
 COPY --from=build /build/.next ./.next
 COPY --from=build /build/public ./public
+# WORKAROUND - Copying the pages twice isn't really nice
+COPY --from=build /build/i18n.json ./i18n.json
+COPY --from=build /build/.next/server/pages ./pages
+
 RUN npm install next
 
 CMD npm run start
