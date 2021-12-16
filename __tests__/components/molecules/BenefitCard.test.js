@@ -32,12 +32,12 @@ describe('<BenefitCard />', () => {
   it('Render components', () => {
     const wrapper = shallow(<BenefitCard benefit={canadaPensionPlan} />)
     expect(wrapper.find('#paymentStartDate')).to.have.lengthOf(1)
-    expect(wrapper.find(Button).prop('children')).to.have.string('View Details')
+    expect(wrapper.find(Button).prop('children')).to.have.string('view_details')
   })
 
   it('Click View Details button', () => {
     const wrapper = shallow(<BenefitCard benefit={canadaPensionPlan} />)
     wrapper.find(Button).simulate('click')
-    expect(wrapper.find(Button).prop('children')).to.have.string('Read Less')
+    expect(wrapper.find(Button).prop('children')).to.have.string('read_less')
   })
 })

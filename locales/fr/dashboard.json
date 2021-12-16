@@ -31,6 +31,28 @@
   "footer_link_terms": "(FR)Terms & Conditions",
   "button_scroll_top": "(FR)Top of page",
 
+  "view_details": "(FR)View Details",
+  "read_less": "(FR)Read Less",
+  "payment_amount": "(FR)Payment Amount",
+  "next_payment_date": "(FR)Next Payment Date",
+
+  "pension_start_date": "(FR)Pension Start Date",
+  "payee_name": "(FR)Payee Name",
+  "payee_address": "(FR)Payee Address",
+  "account_number": "(FR)Account Number",
+  "institution_number": "(FR)Institution Number",
+  "payment_deposit_date": "(FR)Payment Deposit Date",
+  "payment_status": "(FR)Payment Status",
+  "payment_type": "(FR)Payment Type",
+  "additional_information": "(FR)Additional Information",
+
+  "payment_start_date": "(FR)Payment Start Date",
+  "payment_end_date": "(FR)Payment End Date",
+  "payee_full_name": "(FR)Payee Full Name",
+  "payee_institution_account_number": "(FR)Payee Institution Account Number",
+  "payee_institution_sort_code": "(FR)Payee Institution Sort Code (Financial Institution + Branch Code)",
+  "payers_name": "(FR)Payers Name",
+
   "application_date": "(FR)Application Date",
   "application_type": "(FR)Application Type",
   "application_description": "(FR)Application Description",
