@@ -17,10 +17,26 @@ const BenefitCard = (props) => {
   const renderBenefit = () => {
     switch (props.benefit.benefitType) {
       case 'CPP':
-        return <CppBenefitCard canadaPensionPlan={props.benefit} />
+        return (
+          <CppBenefitCard
+            canadaPensionPlan={props.benefit}
+            payments={props.payments}
+          />
+        )
       case 'OAS':
-        return <OasBenefitCard oldAgeSecurity={props.benefit} />
+        return (
+          <OasBenefitCard
+            oldAgeSecurity={props.benefit}
+            application={props.application}
+          />
+        )
       case 'EI':
+        return (
+          <EiBenefitCard
+            employmentInsurance={props.benefit}
+            payments={props.payments}
+          />
+        )
         return <EiBenefitCard employmentInsurance={props.benefit} />
       case 'GIS':
       // We don't need to display details of GIS for simulation.
@@ -38,13 +54,18 @@ const BenefitCard = (props) => {
             <div id="paymentStartDate">
               <p className="text-gray-700 text-base">Payment Amount</p>
               <p className="font-bold text-2xl">
-                ${props.benefit.nextPaymentAmount}
+                $
+                {props.payments.map((payment) => {
+                  return payment.UAPayment.amount
+                })}
               </p>
             </div>
             <div id="paymentEndDate">
               <p className="text-gray-700 text-base">Next Payment Date</p>
               <p className="font-bold text-xl">
-                {props.benefit.nextPaymentDate}
+                {props.payments.map((payment) => {
+                  return payment.UAPayment.coverStartDate
+                })}
               </p>
             </div>
           </div>

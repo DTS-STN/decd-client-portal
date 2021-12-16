@@ -4,17 +4,19 @@ export default function handler(req, res) {
   res.status(200).json({
     oas_benefits: [
       {
-        name: 'OAS',
-        application_status: 'Pending',
-        application_date: '08012021',
-        application_type: 'Old Age Security Benefits (OAS)',
-        application_description: 'Paper Application Received',
-        withdrawal_request: 'Pending',
-        withdrawal_request_description: 'In Progress',
-        withdrawal_status: 'Not Approved',
-        Application_withdrawn: 'No',
-        institution_number: '002',
-        additional_information:
+        benefitType: 'OAS',
+        benefitName: 'Old Age Security',
+        status: 'Pending',
+        statusDesciption:
+          'You application is pending, we will notify you with decision',
+        applicationDate: 'August 1, 2021',
+        applicationType: 'Old Age Security Benefits (OAS)',
+        applicationDescription: 'Paper Application Rceived',
+        withdrawalRequest: 'Pending',
+        withdrawalStatus: 'Not Approved',
+        withdrawalRequestDescription: 'In Progress',
+        applicationWithdrawn: 'No',
+        additionalInformation:
           'Your OAS payments will start as soon as you are approved. You may also qualify for the Guaranteed Income Supplement. We will notify you if we require additional information from you',
       },
     ],

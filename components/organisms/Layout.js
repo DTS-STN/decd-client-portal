@@ -7,45 +7,102 @@ import MessageNotification from '../molecules/MessageNotification'
 import SectionHeading from '../atoms/SectionHeading'
 import Greeting from '../molecules/Greeting'
 import useTranslation from 'next-translate/useTranslation'
+import { useEffect, useState } from 'react'
 
-export default function Layout() {
+export const getCppBenefitApi = async () => {
+  const res = await fetch(`http://localhost:3000/api/cppbenefits`)
+  const data = await res.json()
+
+  if (!data) {
+    return {
+      notFound: true,
+    }
+  }
+
+  return data.cpp_benefits // will be passed to the page component as props
+}
+
+export const getOasBenefitApi = async () => {
+  const res = await fetch(`http://localhost:3000/api/oasbenefits`)
+  const data = await res.json()
+
+  if (!data) {
+    return {
+      notFound: true,
+    }
+  }
+  return data.oas_benefits
+}
+
+export const getEiBenefitApi = async () => {
+  const res = await fetch(`http://localhost:3000/api/eibenefits`)
+  const data = await res.json()
+
+  if (!data) {
+    return {
+      notFound: true,
+    }
+  }
+  return data.ei_benefits // will be passed to the page component as props
+}
+
+export const getNameApi = async () => {
+  const res = await fetch('http://localhost:3000/api/user')
+  const data = await res.json()
+
+  if (!data) {
+    return {
+      notFound: true,
+    }
+  }
+  return data.name // will be passed to the page component as props
+}
+
+export const getPaymentApi = async () => {
+  const res = await fetch(`http://localhost:3000/api/payments`)
+  const data = await res.json()
+
+  if (!data) {
+    return {
+      notFound: true,
+    }
+  }
+  return data.response.UAPaymentList // will be passed to the page component as props
+}
+
+export const getCommunicationApi = async () => {
+  const res = await fetch(`http://localhost:3000/api/communications`)
+  const data = await res.json()
+
+  if (!data) {
+    return {
+      notFound: true,
+    }
+  }
+  return data.response.UACommunicationList // will be passed to the page component as props
+}
+
+export const getSubmittedAppApi = async () => {
+  const res = await fetch(`http://localhost:3000/api/submitted-app`)
+  const data = await res.json()
+
+  if (!data) {
+    return {
+      notFound: true,
+    }
+  }
+  return data.response.UASubmittedApplicationProgram // will be passed to the page component as props
+}
+
+const Layout = () => {
   const { t } = useTranslation('dashboard')
-  const canadaPensionPlan = {
-    benefitType: 'CPP',
-    benefitName: 'Canada Pension Plan',
-    status: 'Active',
-    statusDesciption:
-      'You are currently receiving Canada Pension Plan retirement benefits',
-    nextPaymentAmount: 734.34,
-    nextPaymentDate: 'September 30, 2021',
-    pensionStartDate: 'August 1, 2021',
-    payeeFullName: 'John Smith Doe',
-    payeeAddress: '123 - 00 Fake Street, Ottawa, On A1A-1A1',
-    accountNumber: 'XXXX-123',
-    institutionNumber: '002',
-    payerName: 'Government of Canada',
-    paymentDepositDate: 'August 30, 2021',
-    paymentStatus: 'Issued',
-    paymentType: 'Direct Deposit',
-    additionalInformation: 'Your 2022 tax slips are ready',
-  }
-
-  const oldAgeSecurity = {
-    benefitType: 'OAS',
-    benefitName: 'Old Age Security',
-    status: 'Pending',
-    statusDesciption:
-      'You application is pending, we will notify you with decision',
-    applicationDate: 'August 1, 2021',
-    applicationType: 'Old Age Security Benefits (OAS)',
-    applicationDescription: 'Paper Application Rceived',
-    withdrawalRequest: 'Pending',
-    withdrawalStatus: 'Not Approved',
-    withdrawalRequestDescription: 'In Progress',
-    applicationWithdrawn: 'No',
-    additionalInformation:
-      'Your OAS payments will start as soon as you are approved. You may also qualify for the Guaranteed Income Supplement. We will notify you if we require additional information from you',
-  }
+  const [canadaPensionPlan, updateCanadaPensionPlan] = useState([])
+  const [oldAgeSecurity, updateOldAgeSecurity] = useState([])
+  const [employmentInsurance, updateEmploymentInsurance] = useState([])
+  const [payments, updatePayments] = useState([])
+  const [name, updateName] = useState(null)
+  const [message, updateMessage] = useState([])
+  const [application, updateApplication] = useState([])
 
   const guaranteedIncomeSupplement = {
     benefitType: 'GIS',
@@ -64,31 +121,59 @@ export default function Layout() {
       'Your GIS payments will start as soon as you are approved. You may also qualify for the Old Age Security program. We will notify you if we require additional information from you',
   }
 
-  const employmentInsurance = {
-    benefitType: 'EI',
-    benefitName: 'Employment Insurance',
-    status: 'Past',
-    statusDesciption: 'You are currently enrolled in the Employment Insurance',
-    nextPaymentAmount: 578.56,
-    nextPaymentDate: 'October 30, 2021',
-    paymentStartDate: 'October 30, 2021',
-    paymentEndDate: 'June 30, 2022',
-    payeeFullName: 'John Smith Doe',
-    payeeAddress: '123 - 00 Fake Street, Ottawa, On A1A-1A1',
-    payeeInstitutionAccountNumber: '1234567890-123456',
-    payeeInstitutionSortCode: '12345-67890',
-    payerName: 'CRA',
-    paymentDepositDate: 'October 1, 2021',
-    paymentStatus: 'Issued',
-    paymentType: 'Direct Deposit',
-    additionalInformation: 'Your tax slips are ready in 2022',
-  }
+  useEffect(function effectFunction() {
+    getCppBenefitApi().then((props) => {
+      updateCanadaPensionPlan(props)
+    })
+  }, [])
+
+  useEffect(function effectFunction() {
+    getOasBenefitApi().then((props) => {
+      updateOldAgeSecurity(props)
+    })
+  }, [])
+
+  useEffect(function effectFunction() {
+    getEiBenefitApi().then((props) => {
+      updateEmploymentInsurance(props)
+    })
+  }, [])
+
+  useEffect(function effectFunction() {
+    getNameApi().then((props) => {
+      updateName(props)
+    })
+  }, [])
+
+  useEffect(function effectFunction() {
+    getPaymentApi().then((props) => {
+      updatePayments(props)
+    })
+  }, [])
+
+  useEffect(function effectFunction() {
+    getCommunicationApi().then((props) => {
+      updateMessage(props)
+    })
+  }, [])
+
+  useEffect(function effectFunction() {
+    getSubmittedAppApi().then((props) => {
+      updateApplication(props)
+    })
+  }, [])
+
+  console.log(
+    application.map((app) => {
+      return app
+    })
+  )
 
   return (
     <div>
       <Header />
       <section className="py-4"></section>
-      <Greeting name={'Jane'} />
+      {name && <Greeting name={name} />}
       <MessageNotification />
       <section className="py-4">
         <div className="layout-container font-bold text-3xl">
@@ -99,36 +184,36 @@ export default function Layout() {
         icon="/status-icon-active.svg"
         title={t('title_active_benefits')}
       />
-      <BenefitCard benefit={canadaPensionPlan} />
+      {canadaPensionPlan &&
+        canadaPensionPlan.map((cpp) => {
+          return <BenefitCard benefit={cpp} payments={payments} />
+        })}
+
       <SectionHeading
         icon="/status-icon-pending.svg"
         title={t('title_pending_benefits')}
       />
-      <BenefitCard benefit={oldAgeSecurity} />
+
+      {oldAgeSecurity &&
+        oldAgeSecurity.map((OAS) => {
+          application.map((app) => {})
+          return <BenefitCard benefit={OAS} application={application} />
+        })}
       <BenefitCard benefit={guaranteedIncomeSupplement} />
       <SectionHeading
         icon="/status-icon-past.svg"
         title={t('title_past_benefits')}
       />
-      <BenefitCard benefit={employmentInsurance} />
+
+      {employmentInsurance &&
+        employmentInsurance.map((EI) => {
+          return <BenefitCard benefit={EI} />
+        })}
+
       <MessageCenter
-        messages={[
-          {
-            messageSubject: 'Upcoming change in OAS',
-            date: 'October 4, 2021',
-            attachment: true,
-          },
-          {
-            messageSubject: 'An update regarding GIS',
-            date: 'September 28, 2021',
-            attachment: true,
-          },
-          {
-            messageSubject: 'Your EI eligibility period ends',
-            date: 'July 16, 2021',
-            attachment: false,
-          },
-        ]}
+        messages={message.map((mes) => {
+          return mes.UACommunication
+        })}
       />
       <MoreInfo />
       <Footer
@@ -155,3 +240,5 @@ export default function Layout() {
     </div>
   )
 }
+
+export default Layout

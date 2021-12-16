@@ -26,7 +26,7 @@ export default function MessageCenter({ messages }) {
                       <div className="flex-col">
                         <div className="flex">
                           <h4 className="font-display font-bold text-sm sm:text-base">
-                            {value.messageSubject}
+                            {value.subjectText}
                           </h4>
                           {index == 0 && (
                             <p className="bg-gray-notif text-xxs text-white px-2 h-3 rounded ml-2">
@@ -34,9 +34,11 @@ export default function MessageCenter({ messages }) {
                             </p>
                           )}
                         </div>
-                        <p className="font-body text-xs">{value.date}</p>
+                        <p className="font-body text-xs">
+                          {value.communicationDate}
+                        </p>
                       </div>
-                      {value.attachment && (
+                      {value.attachmentInd && (
                         <svg
                           className="h-4 w-4 stroke-2 sm:h-5 sm:w-5"
                           xmlns="http://www.w3.org/2000/svg"
