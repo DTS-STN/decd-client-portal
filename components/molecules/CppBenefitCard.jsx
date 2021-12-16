@@ -1,14 +1,16 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import useTranslation from 'next-translate/useTranslation'
 
 const CppBenefitCard = (props) => {
+  const { t } = useTranslation('dashboard')
   return (
     <div className="grid grid-cols-1 divide-y divide-grey-500">
       <section></section>
       <section className="mt-4 mx-8" id="paymentDate">
         <div className="sm:flex sm:justify-around sm:grid sm:grid-cols-2 sm:gap-4 sm:mx-auto sm:mt-4">
           <div id="pensionStartDate">
-            <p>Pension Start Date</p>
+            <p>{t('pension_start_date')}</p>
             <p className="font-bold text-base">
               {props.payments.map((payment) => {
                 return payment.UAPayment.coverStartDate
@@ -21,13 +23,13 @@ const CppBenefitCard = (props) => {
       <section className="mt-4 mx-8" id="payeeInfo">
         <div className="sm:flex sm:justify-around sm:grid sm:grid-cols-2 sm:gap-4 sm:mx-auto sm:mt-4">
           <div id="payeeName" className="mb-4 sm:mb-0">
-            <p>Payee Name</p>
+            <p>{t('payee_name')}</p>
             <p className="font-bold text-base">
               {props.canadaPensionPlan.payeeFullName}
             </p>
           </div>
           <div id="payeeAddress" className="mb-4 sm:mb-0">
-            <p>Payee Address</p>
+            <p>{t('payee_address')}</p>
             <p className="font-bold text-base">
               {props.payments.map((payment) => {
                 return payment.UAPayment.nominatedPayeeAddress
@@ -36,7 +38,7 @@ const CppBenefitCard = (props) => {
           </div>
 
           <div id="accountNumber" className="mb-4 sm:mb-0">
-            <p>Account Number</p>
+            <p>{t('account_number')}</p>
             <p className="font-bold text-base">
               {props.payments.map((payment) => {
                 return payment.UAPayment.bankAccountNumber
@@ -44,7 +46,7 @@ const CppBenefitCard = (props) => {
             </p>
           </div>
           <div id="institutionNumber" className="mb-4 sm:mb-0">
-            <p>Institution Number</p>
+            <p>{t('institution_number')}</p>
             <p className="font-bold text-base">
               {props.payments.map((payment) => {
                 return payment.UAPayment.bankSortCode
@@ -61,7 +63,7 @@ const CppBenefitCard = (props) => {
             </p>
           </div>
           <div id="paymentDepositDate" className="mb-4 sm:mb-0">
-            <p>Payment Deposit Date</p>
+            <p>{t('payment_deposit_date')}</p>
             <p className="font-bold text-base">
               {props.payments.map((payment) => {
                 return payment.UAPayment.paymentDate
@@ -70,7 +72,7 @@ const CppBenefitCard = (props) => {
           </div>
 
           <div id="paymentStatus" className="mb-4">
-            <p>Payment Status</p>
+            <p>{t('payment_status')}</p>
             <p className="font-bold text-base">
               {props.payments.map((payment) => {
                 return payment.UAPayment.status
@@ -78,7 +80,7 @@ const CppBenefitCard = (props) => {
             </p>
           </div>
           <div id="paymentType" className="mb-4">
-            <p>Payment Type</p>
+            <p>{t('payment_type')}</p>
             <p className="font-bold text-base">
               {props.payments.map((payment) => {
                 return payment.UAPayment.method
@@ -91,7 +93,7 @@ const CppBenefitCard = (props) => {
       <section className="mt-4 mx-8" id="additionalInfoSection">
         <div className="flex justify-around grid grid-cols-2 gap-4 mx-auto mt-4">
           <div id="additionalInfo">
-            <p>Additional Information</p>
+            <p>{t('additional_information')}</p>
             <p className="font-bold text-base">
               {props.canadaPensionPlan.additionalInformation}
             </p>

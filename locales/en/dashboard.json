@@ -31,6 +31,28 @@
   "footer_link_terms": "Terms & Conditions",
   "button_scroll_top": "Top of page",
 
+  "view_details": "View Details",
+  "read_less": "Read Less",
+  "payment_amount": "Payment Amount",
+  "next_payment_date": "Next Payment Date",
+
+  "pension_start_date": "Pension Start Date",
+  "payee_name": "Payee Name",
+  "payee_address": "Payee Address",
+  "account_number": "Account Number",
+  "institution_number": "Institution Number",
+  "payment_deposit_date": "Payment Deposit Date",
+  "payment_status": "Payment Status",
+  "payment_type": "Payment Type",
+  "additional_information": "Additional Information",
+
+  "payment_start_date": "Payment Start Date",
+  "payment_end_date": "Payment End Date",
+  "payee_full_name": "Payee Full Name",
+  "payee_institution_account_number": "Payee Institution Account Number",
+  "payee_institution_sort_code": "Payee Institution Sort Code (Financial Institution + Branch Code)",
+  "payers_name": "Payers Name",
+
   "application_date": "Application Date",
   "application_type": "Application Type",
   "application_description": "Application Description",

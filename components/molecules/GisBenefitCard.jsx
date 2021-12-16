@@ -63,7 +63,7 @@ const GisBenefitCard = (props) => {
 
       <section className="mt-4 mx-8" id="additionalInfoSection">
         <div id="additionalInfo" className="mx-auto mt-4">
-          <p className="font-bold text-base">Additional Information</p>
+          <p className="font-bold text-base">{t('additional_information')}</p>
           <p>{props.guaranteedIncomeSupplement.additionalInformation}</p>
         </div>
       </section>
