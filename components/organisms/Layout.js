@@ -6,102 +6,17 @@ import MessageCenter from '../molecules/MessageCenter'
 import MessageNotification from '../molecules/MessageNotification'
 import SectionHeading from '../atoms/SectionHeading'
 import Greeting from '../molecules/Greeting'
+import {
+  getCppBenefitApi,
+  getPaymentApi,
+  getEiBenefitApi,
+  getCommunicationApi,
+  getOasBenefitApi,
+  getNameApi,
+  getSubmittedAppApi,
+} from './DashboardApiHelper'
 import useTranslation from 'next-translate/useTranslation'
 import { useEffect, useState } from 'react'
-import {
-  COMMUNICATION,
-  CPPBENEFIT,
-  EIBENEFIT,
-  OASBENEFIT,
-  PAYMENTS,
-  SUBMITTEDAPI,
-  USER,
-} from './constants'
-
-export const getCppBenefitApi = async () => {
-  const res = await fetch(CPPBENEFIT)
-  const data = await res.json()
-
-  if (!data) {
-    return {
-      notFound: true,
-    }
-  }
-
-  return data.cpp_benefits // will be passed to the page component as props
-}
-
-export const getOasBenefitApi = async () => {
-  const res = await fetch(OASBENEFIT)
-  const data = await res.json()
-
-  if (!data) {
-    return {
-      notFound: true,
-    }
-  }
-  return data.oas_benefits
-}
-
-export const getEiBenefitApi = async () => {
-  const res = await fetch(EIBENEFIT)
-  const data = await res.json()
-
-  if (!data) {
-    return {
-      notFound: true,
-    }
-  }
-  return data.ei_benefits // will be passed to the page component as props
-}
-
-export const getNameApi = async () => {
-  const res = await fetch(USER)
-  const data = await res.json()
-
-  if (!data) {
-    return {
-      notFound: true,
-    }
-  }
-  return data.name // will be passed to the page component as props
-}
-
-export const getPaymentApi = async () => {
-  const res = await fetch(PAYMENTS)
-  const data = await res.json()
-
-  if (!data) {
-    return {
-      notFound: true,
-    }
-  }
-  return data.response.UAPaymentList // will be passed to the page component as props
-}
-
-export const getCommunicationApi = async () => {
-  const res = await fetch(COMMUNICATION)
-  const data = await res.json()
-
-  if (!data) {
-    return {
-      notFound: true,
-    }
-  }
-  return data.response.UACommunicationList // will be passed to the page component as props
-}
-
-export const getSubmittedAppApi = async () => {
-  const res = await fetch(SUBMITTEDAPI)
-  const data = await res.json()
-
-  if (!data) {
-    return {
-      notFound: true,
-    }
-  }
-  return data.response.UASubmittedApplicationProgram // will be passed to the page component as props
-}
 
 const Layout = () => {
   const { t } = useTranslation('dashboard')
