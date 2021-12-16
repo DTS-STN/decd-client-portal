@@ -8,9 +8,19 @@ import SectionHeading from '../atoms/SectionHeading'
 import Greeting from '../molecules/Greeting'
 import useTranslation from 'next-translate/useTranslation'
 import { useEffect, useState } from 'react'
+import {
+  COMMUNICATION,
+  CPPBENEFIT,
+  EIBENEFIT,
+  OASBENEFIT,
+  PAYMENTS,
+  SUBMITTEDAPI,
+  USER,
+} from './constants'
+import { get } from 'enzyme/build/configuration'
 
 export const getCppBenefitApi = async () => {
-  const res = await fetch(`http://localhost:3000/api/cppbenefits`)
+  const res = await fetch(CPPBENEFIT)
   const data = await res.json()
 
   if (!data) {
@@ -23,7 +33,7 @@ export const getCppBenefitApi = async () => {
 }
 
 export const getOasBenefitApi = async () => {
-  const res = await fetch(`http://localhost:3000/api/oasbenefits`)
+  const res = await fetch(OASBENEFIT)
   const data = await res.json()
 
   if (!data) {
@@ -35,7 +45,7 @@ export const getOasBenefitApi = async () => {
 }
 
 export const getEiBenefitApi = async () => {
-  const res = await fetch(`http://localhost:3000/api/eibenefits`)
+  const res = await fetch(EIBENEFIT)
   const data = await res.json()
 
   if (!data) {
@@ -47,7 +57,7 @@ export const getEiBenefitApi = async () => {
 }
 
 export const getNameApi = async () => {
-  const res = await fetch('http://localhost:3000/api/user')
+  const res = await fetch(USER)
   const data = await res.json()
 
   if (!data) {
@@ -59,7 +69,7 @@ export const getNameApi = async () => {
 }
 
 export const getPaymentApi = async () => {
-  const res = await fetch(`http://localhost:3000/api/payments`)
+  const res = await fetch(PAYMENTS)
   const data = await res.json()
 
   if (!data) {
@@ -71,7 +81,7 @@ export const getPaymentApi = async () => {
 }
 
 export const getCommunicationApi = async () => {
-  const res = await fetch(`http://localhost:3000/api/communications`)
+  const res = await fetch(COMMUNICATION)
   const data = await res.json()
 
   if (!data) {
@@ -83,7 +93,7 @@ export const getCommunicationApi = async () => {
 }
 
 export const getSubmittedAppApi = async () => {
-  const res = await fetch(`http://localhost:3000/api/submitted-app`)
+  const res = await fetch(SUBMITTEDAPI)
   const data = await res.json()
 
   if (!data) {
