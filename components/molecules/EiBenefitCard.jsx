@@ -74,6 +74,7 @@ const EiBenefitCard = (props) => {
           <div id="paymentStatus" className="mb-4">
             <p>{t('payment_type')}</p>
             <p className="font-bold text-base">
+              ABC
               {props.employmentInsurance.paymentType}
             </p>
           </div>

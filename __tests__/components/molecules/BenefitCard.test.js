@@ -1,4 +1,3 @@
-import React from 'react'
 import BenefitCard from '../../../components/molecules/BenefitCard'
 import Button from '../../../components/atoms/Button'
 import Enzyme, { shallow } from 'enzyme'
@@ -28,15 +27,63 @@ const canadaPensionPlan = {
   additionalInformation: 'Your 2022 tax slips are ready',
 }
 
+const payments = {
+  UAPaymentList: [
+    {
+      UAPayment: {
+        amount: '734.34',
+        bankAccountNumber: 'XXXX-123',
+        bankSortCode: '002',
+        checkNumber: '874541252100255',
+        coverStartDate: 'August 1, 2021',
+        coverEndDate: '01012025',
+        currency: 'cnd',
+        dueDate: '01-01-2021',
+        method: 'Direct Deposit',
+        nominatedPayeeAddress: '123 - 00 Fake Street, Ottawa, On A1A-1A1',
+        nominatedPayeeName: 'John Smith Doe',
+        payedByName: 'Government of Canada',
+        payment_id: 'PA02220',
+        paymentDate: 'August 30, 2021',
+        status: 'Issued',
+        statusOther: 'CODE01',
+        external: 'false',
+        voucherNumber: 'ABC00221121',
+        paymentDetails: [
+          {
+            benefitName: 'OAS',
+            caseId: 'CASE001',
+            caseReference: 'RE99009999',
+            coverEndDate: '02032021',
+            coverStartDate: '02042021',
+            creditAmount: '200.02',
+            debitAmount: '0.0',
+            entitlement: 'EN009',
+          },
+        ],
+      },
+    },
+  ],
+}
+
 describe('<BenefitCard />', () => {
   it('Render components', () => {
-    const wrapper = shallow(<BenefitCard benefit={canadaPensionPlan} />)
-    expect(wrapper.find('#paymentStartDate')).to.have.lengthOf(1)
+    const wrapper = shallow(
+      <BenefitCard
+        benefit={() => canadaPensionPlan}
+        payments={() => payments}
+      />
+    )
     expect(wrapper.find(Button).prop('children')).to.have.string('view_details')
   })
 
   it('Click View Details button', () => {
-    const wrapper = shallow(<BenefitCard benefit={canadaPensionPlan} />)
+    const wrapper = shallow(
+      <BenefitCard
+        benefit={() => canadaPensionPlan}
+        payments={() => payments}
+      />
+    )
     wrapper.find(Button).simulate('click')
     expect(wrapper.find(Button).prop('children')).to.have.string('read_less')
   })

@@ -12,20 +12,26 @@ const OasBenefitCard = (props) => {
           <div id="applicationDate">
             <p>{t('application_date')}</p>
             <p className="font-bold text-base">
-              {props.oldAgeSecurity.applicationDate}
+              {props.application.map((app) => {
+                return app.submittedOn
+              })}
             </p>
           </div>
           <div id="applicationType">
             <p>{t('application_type')}</p>
             <p className="font-bold text-base">
-              {props.oldAgeSecurity.applicationType}
+              {props.application.map((app) => {
+                return app.name
+              })}
             </p>
           </div>
           <div></div>
           <div id="applicationDescription">
             <p>{t('application_description')}</p>
             <p className="font-bold text-base">
-              {props.oldAgeSecurity.applicationDescription}
+              {props.application.map((app) => {
+                return app.description
+              })}
             </p>
           </div>
         </div>
@@ -36,13 +42,17 @@ const OasBenefitCard = (props) => {
           <div id="withdrawalRequest" className="mb-4 sm:mb-0">
             <p>{t('withdrawal_request')}</p>
             <p className="font-bold text-base">
-              {props.oldAgeSecurity.withdrawalRequest}
+              {props.application.map((app) => {
+                return app.programStatusDetails.hasPendingwithdrawalRequest
+              })}
             </p>
           </div>
           <div id="withdrawalStatus" className="mb-4 sm:mb-0">
             <p>{t('withdrawal_status')}</p>
             <p className="font-bold text-base">
-              {props.oldAgeSecurity.withdrawalStatus}
+              {props.application.map((app) => {
+                return app.programStatusDetails.status
+              })}
             </p>
           </div>
 
@@ -64,7 +74,11 @@ const OasBenefitCard = (props) => {
       <section className="mt-4 mx-8" id="additionalInfoSection">
         <div id="additionalInfo" className="mx-auto mt-4">
           <p className="font-bold text-base">{t('additional_information')}</p>
-          <p>{props.oldAgeSecurity.additionalInformation}</p>
+          <p>
+            {props.application.map((app) => {
+              return app.programStatusDetails.withdrawalRequestStatusMessage
+            })}
+          </p>
         </div>
       </section>
     </div>

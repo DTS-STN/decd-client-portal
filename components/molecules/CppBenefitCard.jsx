@@ -12,7 +12,9 @@ const CppBenefitCard = (props) => {
           <div id="pensionStartDate">
             <p>{t('pension_start_date')}</p>
             <p className="font-bold text-base">
-              {props.canadaPensionPlan.pensionStartDate}
+              {props.payments.map((payment) => {
+                return payment.UAPayment.coverStartDate
+              })}
             </p>
           </div>
         </div>
@@ -29,46 +31,60 @@ const CppBenefitCard = (props) => {
           <div id="payeeAddress" className="mb-4 sm:mb-0">
             <p>{t('payee_address')}</p>
             <p className="font-bold text-base">
-              {props.canadaPensionPlan.payeeAddress}
+              {props.payments.map((payment) => {
+                return payment.UAPayment.nominatedPayeeAddress
+              })}
             </p>
           </div>
 
           <div id="accountNumber" className="mb-4 sm:mb-0">
             <p>{t('account_number')}</p>
             <p className="font-bold text-base">
-              {props.canadaPensionPlan.accountNumber}
+              {props.payments.map((payment) => {
+                return payment.UAPayment.bankAccountNumber
+              })}
             </p>
           </div>
           <div id="institutionNumber" className="mb-4 sm:mb-0">
             <p>{t('institution_number')}</p>
             <p className="font-bold text-base">
-              {props.canadaPensionPlan.institutionNumber}
+              {props.payments.map((payment) => {
+                return payment.UAPayment.bankSortCode
+              })}
             </p>
           </div>
 
           <div id="payerName" className="mb-4 sm:mb-0">
             <p>{"Payer's Name"}</p>
             <p className="font-bold text-base">
-              {props.canadaPensionPlan.payerName}
+              {props.payments.map((payment) => {
+                return payment.UAPayment.payedByName
+              })}
             </p>
           </div>
           <div id="paymentDepositDate" className="mb-4 sm:mb-0">
             <p>{t('payment_deposit_date')}</p>
             <p className="font-bold text-base">
-              {props.canadaPensionPlan.paymentDepositDate}
+              {props.payments.map((payment) => {
+                return payment.UAPayment.paymentDate
+              })}
             </p>
           </div>
 
           <div id="paymentStatus" className="mb-4">
             <p>{t('payment_status')}</p>
             <p className="font-bold text-base">
-              {props.canadaPensionPlan.paymentStatus}
+              {props.payments.map((payment) => {
+                return payment.UAPayment.status
+              })}
             </p>
           </div>
           <div id="paymentType" className="mb-4">
             <p>{t('payment_type')}</p>
             <p className="font-bold text-base">
-              {props.canadaPensionPlan.paymentType}
+              {props.payments.map((payment) => {
+                return payment.UAPayment.method
+              })}
             </p>
           </div>
         </div>
