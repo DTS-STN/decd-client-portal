@@ -17,7 +17,6 @@ import {
   SUBMITTEDAPI,
   USER,
 } from './constants'
-import { get } from 'enzyme/build/configuration'
 
 export const getCppBenefitApi = async () => {
   const res = await fetch(CPPBENEFIT)
