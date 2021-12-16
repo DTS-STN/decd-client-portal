@@ -1,4 +1,3 @@
-import React, { useState } from 'react'
 import BenefitCard from '../../../components/molecules/BenefitCard'
 import Button from '../../../components/atoms/Button'
 import Enzyme, { shallow } from 'enzyme'
