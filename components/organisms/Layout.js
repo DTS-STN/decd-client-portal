@@ -195,7 +195,7 @@ const Layout = () => {
       />
       {canadaPensionPlan &&
         canadaPensionPlan.map((cpp) => {
-          return <BenefitCard benefit={cpp} payments={payments} />
+          return (cpp = <BenefitCard benefit={cpp} payments={payments} />)
         })}
 
       <SectionHeading
@@ -206,7 +206,7 @@ const Layout = () => {
       {oldAgeSecurity &&
         oldAgeSecurity.map((OAS) => {
           application.map((app) => {})
-          return <BenefitCard benefit={OAS} application={application} />
+          return (OAS = <BenefitCard benefit={OAS} application={application} />)
         })}
       <BenefitCard benefit={guaranteedIncomeSupplement} />
       <SectionHeading
@@ -216,7 +216,7 @@ const Layout = () => {
 
       {employmentInsurance &&
         employmentInsurance.map((EI) => {
-          return <BenefitCard benefit={EI} />
+          return (EI = <BenefitCard benefit={EI} />)
         })}
 
       <MessageCenter
