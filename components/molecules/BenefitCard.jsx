@@ -86,11 +86,13 @@ const BenefitCard = (props) => {
       <div className="w-12/12 mx-auto rounded overflow-hidden shadow-lg">
         {/* Benefit Card */}
         <div className="px-6 py-4">
-          <div className="font-bold text-4xl mb-2">
+          <div className="font-bold font-display text-5xl mb-1">
             {props.benefit.benefitType}
           </div>
-          <p className="font-bold text-base">{props.benefit.benefitName}</p>
-          <p className="text-gray-700 text-base">
+          <p className="font-bold font-display text-base">
+            {props.benefit.benefitName}
+          </p>
+          <p className="font-body text-gray-700 text-base">
             {props.benefit.statusDesciption}
           </p>
           {renderStatus()}
