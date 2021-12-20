@@ -97,11 +97,9 @@ const BenefitCard = (props) => {
       case 'Pending':
         return (
           <>
-            {isOpen ? (
-              <Button onClick={console.log('View Your Application')}>
-                {t('view_your_application')}
-              </Button>
-            ) : null}
+            <Button onClick={console.log('View Your Application')}>
+              {t('view_your_application')}
+            </Button>
             <Button onClick={console.log('Your documents')}>
               {t('your_documents')}
             </Button>

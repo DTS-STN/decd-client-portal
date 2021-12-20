@@ -6,7 +6,7 @@ export default function handler(req, res) {
       {
         benefitType: 'EI',
         benefitName: 'Employment Insurance',
-        status: 'PastBenefits',
+        status: 'Past',
         statusDesciption:
           'You are currently enrolled in the Employment Insurance',
         nextPaymentAmount: 578.56,
