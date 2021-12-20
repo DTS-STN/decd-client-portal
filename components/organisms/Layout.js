@@ -99,6 +99,7 @@ const Layout = () => {
       <section className="py-4"></section>
       {name && <Greeting name={name} />}
       <MessageNotification />
+      <SectionHeading />
       <section className="py-4">
         <div className="layout-container font-bold text-3xl">
           {t('title_your_benefits')}

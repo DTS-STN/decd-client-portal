@@ -5,7 +5,7 @@ export default function SectionHeading(props) {
         <img src={props.icon}></img>
         <h2 className="font-bold font-display text-lg ml-2">{props.title}</h2>
       </div>
-      <hr className="bg-bright-blue-royal h-tiny" />
+      <hr className="border-bright-blue-royal h-tiny" />
     </div>
   )
 }

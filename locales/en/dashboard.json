@@ -10,6 +10,7 @@
   "greeting_message": "Good Morning, {{name}}. Welcome to your My Service Account",
   "title_new_message": "New Message",
   "link_notification_center": "Go to Notifications and Message Center",
+  "button_your_account": "Your Account",
   "title_your_benefits": "Your Benefits and Services",
   "title_active_benefits": "Active Benefits and Services",
   "title_pending_benefits": "Pending Benefits and Services",
@@ -32,7 +33,10 @@
   "button_scroll_top": "Top of page",
 
   "view_details": "View Details",
-  "read_less": "Read Less",
+  "view_less": "View Less",
+  "payment_details": "Payment Details",
+  "your_documents": "Your documents",
+  "view_your_application": "View Your Application",
   "payment_amount": "Payment Amount",
   "next_payment_date": "Next Payment Date",
 

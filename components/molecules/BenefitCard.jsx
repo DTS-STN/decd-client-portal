@@ -12,7 +12,7 @@ const BenefitCard = (props) => {
   const [isOpen, setIsOpen] = useState(false)
   const [btnCaption, setBtnCaption] = useState('view_details')
   const handleClick = () => {
-    setBtnCaption(isOpen ? 'view_details' : 'read_less')
+    setBtnCaption(isOpen ? 'view_details' : 'view_less')
     setIsOpen(!isOpen)
   }
 
@@ -81,6 +81,39 @@ const BenefitCard = (props) => {
     }
   }
 
+  const renderAdditionalButtons = () => {
+    switch (props.benefit.status) {
+      case 'Active':
+        return (
+          <>
+            <Button onClick={console.log('Payment Details')}>
+              {t('payment_details')}
+            </Button>
+            <Button onClick={console.log('Your documents')}>
+              {t('your_documents')}
+            </Button>
+          </>
+        )
+      case 'Pending':
+        return (
+          <>
+            {isOpen ? (
+              <Button onClick={console.log('View Your Application')}>
+                {t('view_your_application')}
+              </Button>
+            ) : null}
+            <Button onClick={console.log('Your documents')}>
+              {t('your_documents')}
+            </Button>
+          </>
+        )
+      case 'Past':
+
+      default:
+        return null
+    }
+  }
+
   return (
     <div className="layout-container py-4">
       <div className="w-12/12 mx-auto rounded overflow-hidden shadow-lg">
@@ -99,7 +132,12 @@ const BenefitCard = (props) => {
         </div>
         {/* Benefit Card Details */}
         <div>{isOpen && renderBenefit()}</div>
-        <Button onClick={handleClick}>{t(btnCaption)}</Button>
+        <div>
+          {isOpen && renderAdditionalButtons()}
+          <Button onClick={handleClick} lightMode={isOpen}>
+            {t(btnCaption)}
+          </Button>
+        </div>
       </div>
     </div>
   )

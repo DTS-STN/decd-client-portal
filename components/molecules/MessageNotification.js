@@ -1,11 +1,12 @@
 import useTranslation from 'next-translate/useTranslation'
+import MyAccount from './MyAccount'
 
 const MessageNotification = () => {
   const { t } = useTranslation('dashboard')
   return (
-    <div className="layout-container">
+    <div className="layout-container md:flex">
       <div className="py-4">
-        <p className="text-2xl">
+        <p className="text-2xl mr-4">
           <img src="/notification.svg" className="inline" />
           <span className="text-notificationText-solid mx-2">1</span>
           {t('title_new_message')}
@@ -14,7 +15,7 @@ const MessageNotification = () => {
           </a>
         </p>
       </div>
-      <hr className="bg-bright-blue-royal h-tiny" />
+      <MyAccount />
     </div>
   )
 }

@@ -10,6 +10,7 @@
   "greeting_message": "Bonjour, {{name}}. Bienvenue à votre compte Mon dossier Service Canada",
   "title_new_message": "Nouveau message",
   "link_notification_center": "Aller à notifications et centre de messages",
+  "button_your_account": "(FR)Your Account",
   "title_your_benefits": "Vos bénéfices et services",
   "title_active_benefits": "Bénéfices et services actifs",
   "title_pending_benefits": "Bénéfices et services en attente",
@@ -40,7 +41,10 @@
   "application_withdrawn": "Demande supprimée",
 
   "view_details": "(FR)View Details",
-  "read_less": "(FR)Read Less",
+  "view_less": "(FR)View Less",
+  "payment_details": "(FR)Payment Details",
+  "your_documents": "(FR)Your documents",
+  "view_your_application": "(FR)View Your Application",
   "payment_amount": "(FR)Payment Amount",
   "next_payment_date": "(FR)Next Payment Date",
 

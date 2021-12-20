@@ -85,6 +85,6 @@ describe('<BenefitCard />', () => {
       />
     )
     wrapper.find(Button).simulate('click')
-    expect(wrapper.find(Button).prop('children')).to.have.string('read_less')
+    expect(wrapper.find(Button).prop('children')).to.have.string('view_less')
   })
 })
