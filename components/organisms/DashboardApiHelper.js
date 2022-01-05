@@ -1,15 +1,27 @@
 import {
   COMMUNICATION,
+  COMMUNICATION_MOCK,
   CPPBENEFIT,
+  CPPBENEFIT_MOCK,
   EIBENEFIT,
+  EIBENEFIT_MOCK,
   OASBENEFIT,
+  OASBENEFIT_MOCK,
   PAYMENTS,
+  PAYMENTS_MOCK,
   SUBMITTEDAPI,
+  SUBMITTEDAPI_MOCK,
   USER,
+  USER_MOCK,
 } from './Constants'
 
 export const getCppBenefitApi = async () => {
-  const res = await fetch(CPPBENEFIT)
+  let res
+  try {
+    res = await fetch(CPPBENEFIT)
+  } catch (e) {
+    res = await fetch(CPPBENEFIT_MOCK)
+  }
   const data = await res.json()
 
   if (!data) {
@@ -21,7 +33,12 @@ export const getCppBenefitApi = async () => {
   return data.cpp_benefits // will be passed to the page component as props
 }
 export const getOasBenefitApi = async () => {
-  const res = await fetch(OASBENEFIT)
+  let res
+  try {
+    res = await fetch(OASBENEFIT)
+  } catch (e) {
+    res = await fetch(OASBENEFIT_MOCK)
+  }
   const data = await res.json()
 
   if (!data) {
@@ -33,7 +50,12 @@ export const getOasBenefitApi = async () => {
 }
 
 export const getEiBenefitApi = async () => {
-  const res = await fetch(EIBENEFIT)
+  let res
+  try {
+    res = await fetch(EIBENEFIT)
+  } catch (e) {
+    res = await fetch(EIBENEFIT_MOCK)
+  }
   const data = await res.json()
 
   if (!data) {
@@ -45,7 +67,12 @@ export const getEiBenefitApi = async () => {
 }
 
 export const getNameApi = async () => {
-  const res = await fetch(USER)
+  let res
+  try {
+    res = await fetch(USER)
+  } catch (e) {
+    res = await fetch(USER_MOCK)
+  }
   const data = await res.json()
 
   if (!data) {
@@ -57,7 +84,12 @@ export const getNameApi = async () => {
 }
 
 export const getPaymentApi = async () => {
-  const res = await fetch(PAYMENTS)
+  let res
+  try {
+    res = await fetch(PAYMENTS)
+  } catch (e) {
+    res = await fetch(PAYMENTS_MOCK)
+  }
   const data = await res.json()
 
   if (!data) {
@@ -69,7 +101,12 @@ export const getPaymentApi = async () => {
 }
 
 export const getCommunicationApi = async () => {
-  const res = await fetch(COMMUNICATION)
+  let res
+  try {
+    res = await fetch(COMMUNICATION)
+  } catch (e) {
+    res = await fetch(COMMUNICATION_MOCK)
+  }
   const data = await res.json()
 
   if (!data) {
@@ -81,7 +118,12 @@ export const getCommunicationApi = async () => {
 }
 
 export const getSubmittedAppApi = async () => {
-  const res = await fetch(SUBMITTEDAPI)
+  let res
+  try {
+    res = await fetch(SUBMITTEDAPI)
+  } catch (e) {
+    res = await fetch(SUBMITTEDAPI_MOCK)
+  }
   const data = await res.json()
 
   if (!data) {
