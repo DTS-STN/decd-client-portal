@@ -8,7 +8,7 @@ import GisBenefitCard from './GisBenefitCard'
 import useTranslation from 'next-translate/useTranslation'
 
 const BenefitCard = (props) => {
-  const { t } = useTranslation('dashboard')
+  const { t, lang } = useTranslation('dashboard')
   const [isOpen, setIsOpen] = useState(false)
   const [btnCaption, setBtnCaption] = useState('view_details')
   const handleClick = () => {
@@ -56,10 +56,11 @@ const BenefitCard = (props) => {
             <div id="paymentStartDate">
               <p className="text-gray-700 text-base">{t('payment_amount')}</p>
               <p className="font-bold text-2xl">
-                $
+                {lang === 'en' && '$'}
                 {props.payments.map((payment) => {
                   return payment.UAPayment.amount
                 })}
+                {lang === 'fr' && '$'}
               </p>
             </div>
             <div id="paymentEndDate">

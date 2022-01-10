@@ -5,7 +5,7 @@ import MoreInfo from '../molecules/MoreInfo'
 import MessageCenter from '../molecules/MessageCenter'
 import MessageNotification from '../molecules/MessageNotification'
 import SectionHeading from '../atoms/SectionHeading'
-import Greeting from '../molecules/Greeting'
+import Greeting from '../atoms/Greeting'
 import {
   getCppBenefitApi,
   getPaymentApi,

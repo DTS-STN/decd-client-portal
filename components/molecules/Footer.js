@@ -6,7 +6,7 @@ import ScrollToTop from '../atoms/ScrollToTop'
 export default function Footer({ links }) {
   return (
     <footer>
-      <div className="layout-container py-12 lg:py-16">
+      <div className="layout-container py-10 lg:py-16">
         <DateModified />
         <div className="w-full lg:flex lg:justify-between lg:items-center">
           <div className="flex-col">
