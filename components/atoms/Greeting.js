@@ -4,7 +4,7 @@ const Greeting = ({ name }) => {
   const { t } = useTranslation('dashboard')
   return (
     <section>
-      <div className="layout-container font-bold text-4xl">
+      <div className="layout-container font-bold font-display text-4xl">
         {t('greeting_message', { name: name })}
       </div>
     </section>
